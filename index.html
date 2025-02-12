@@ -6,21 +6,9 @@
     <title>Test Site</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
+    
     <script src="https://js.stripe.com/v3/"></script>
-    <script>
-        const stripe = Stripe('pk_live_51QVfT4CDK4fpOs814KMyC5AJHTRP74D5yHhEjZY2jf10XP0taGAh5WiRSHPr4hrnihp2MUCx3DGOXr2kGKHOFAb200y4c824Uy');
-        const elements = stripe.elements();
-        const options = {
-          amount: 20000, // $99.00 USD
-          currency: 'USD',
-          // the country that the end-buyer is in
-          countryCode: 'US',
-        };
-        const PaymentMessageElement =
-          elements.create('paymentMethodMessaging', options);
-        PaymentMessageElement.mount('#payment-method-messaging-element');</script>
-
-
+    
 </head>
 <body>
     <header>
@@ -31,6 +19,7 @@
     <a href="checkout.html">Checkout</a>
 </nav>
     </header>
+   
 
     <div class="container" id="catalog">
         <h2>Product Catalog</h2>
@@ -64,7 +53,7 @@
             <button onclick="addToCart('Product 4')">Add to Cart</button>
         </div>
     </div>
-
+    
 
     <footer>
         <nav>
@@ -78,6 +67,18 @@
         <p>&copy; 2024 Static E-commerce Site</p>
     </footer>
 
-    
+    <script>const stripe = Stripe('pk_live_51QVfT4CDK4fpOs814KMyC5AJHTRP74D5yHhEjZY2jf10XP0taGAh5WiRSHPr4hrnihp2MUCx3DGOXr2kGKHOFAb200y4c824Uy');
+        const elements = stripe.elements();
+        const options = {
+          amount: 20000, // $99.00 USD
+          paymentMethodTypes:[Affirm],
+          currency: 'USD',
+          // the country that the end-buyer is in
+          countryCode: 'US',
+        };
+        const PaymentMessageElement =
+          elements.create('paymentMethodMessaging', options);
+        PaymentMessageElement.mount('#payment-method-messaging-element');</script>
+
 </body>
 </html>
