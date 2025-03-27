@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Site</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    
+    <script src="https://js.stripe.com/v3/"></script>
+    
+</head>
+
+<body>
+    <header>
+        <h1>Leather Mart</h1>
+    <nav>
+    <a href="index.html#catalog">Catalog</a>
+    <a href="cart.html">Cart</a>
+    <a href="checkout.html">Checkout</a>
+</nav>
+</header>
+
+
+<div class="product">
+    <h3>Leather Wallet</h3>
+    <img src="https://images.pexels.com/photos/8062364/pexels-photo-8062364.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Product 3">
+    <p>Keep the change, in style!</p>
+    <p class="price">$10.00</p>
+    <div id="payment-method-messaging-element"></div>
+    <button onclick="addToCart('Leather Wallet')">Add to Cart</button>
+</div>
+<script>const stripe = Stripe('pk_live_51QVfT4CDK4fpOs814KMyC5AJHTRP74D5yHhEjZY2jf10XP0taGAh5WiRSHPr4hrnihp2MUCx3DGOXr2kGKHOFAb200y4c824Uy');
+    const elements = stripe.elements();
+    const options = {
+      amount: 1000, // $50.00 USD
+      currency: 'USD',
+      // the country that the end-buyer is in
+      countryCode: 'US',
+    };
+    const PaymentMessageElement =
+      elements.create('paymentMethodMessaging', options);
+    PaymentMessageElement.mount('#payment-method-messaging-element');</script>

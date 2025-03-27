@@ -27,30 +27,29 @@
             <h3>Leather Jacket</h3>
             <img src="https://images.pexels.com/photos/826380/pexels-photo-826380.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Leather_jacket">
             <p>Black leather Jacket for keeping warm in style</p>
-            <p class="price">$200.00</p>
-            <div id="payment-method-messaging-element"></div>
-            <button onclick="addToCart('Leather Jacket')">Add to Cart</button>
+            <p class="price">$1000.00</p>
+            <a href="jacket.html">Learn More</a>
         </div>
         <div class="product">
             <h3>Leather Bag</h3>
             <img src="https://images.pexels.com/photos/1152077/pexels-photo-1152077.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Product 2">
             <p>Carry things around in style</p>
             <p class="price">$180.00</p>
-            <button onclick="addToCart('Leather Bag')">Add to Cart</button>
+            <a href="bag.html"> Learn More </a>
         </div>
         <div class="product">
             <h3>Leather Wallet</h3>
             <img src="https://images.pexels.com/photos/8062364/pexels-photo-8062364.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Product 3">
             <p>Keep the change, in style!</p>
             <p class="price">$10.00</p>
-            <button onclick="addToCart('Leather Wallet')">Add to Cart</button>
+            <a href="wallet.html">Learn More</a>
         </div>
         <div class="product">
             <h3>Leather Gloves</h3>
             <img src="https://images.pexels.com/photos/45057/pexels-photo-45057.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Product 4">
             <p>Gloves for those cold nights</p>
-            <p class="price">$10.00</p>
-            <button onclick="addToCart('Product 4')">Add to Cart</button>
+            <p class="price">$50.00</p>
+            <a href="gloves.html">Learn More</a>
         </div>
     </div>
     
@@ -67,14 +66,13 @@
         <p>&copy; 2024 Static E-commerce Site</p>
     </footer>
 
-    <script>const stripe = Stripe('pk_live_51QVfT4CDK4fpOs814KMyC5AJHTRP74D5yHhEjZY2jf10XP0taGAh5WiRSHPr4hrnihp2MUCx3DGOXr2kGKHOFAb200y4c824Uy');
+    <script>const stripe = Stripe('pk_live_51R2YoYIz2c5020DDR1NJUPjb5pEjpyiYrf2T7HJhboi54USAyrkRDnHtt9QFgZKxXGvNJl71Y6LRf1lAoQNEvz2Z00eWIwMB43');
         const elements = stripe.elements();
         const options = {
-          amount: 20000, // $99.00 USD
-          paymentMethodTypes:[Affirm],
-          currency: 'USD',
+          amount: 100000, // $1000.00 USD
+          currency: 'CAD',
           // the country that the end-buyer is in
-          countryCode: 'US',
+          countryCode: 'CA',
         };
         const PaymentMessageElement =
           elements.create('paymentMethodMessaging', options);
