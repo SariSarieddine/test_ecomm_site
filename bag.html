@@ -26,19 +26,37 @@
     <img src="https://images.pexels.com/photos/1152077/pexels-photo-1152077.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Product 2">
     <p>Carry things around in style</p>
     <p class="price">$180.00</p>
-    <div id="payment-method-messaging-element"></div>
+    <div id="payment-method-messaging-element1"></div>
+    <div id="payment-method-messaging-element2"></div>
     <button onclick="addToCart('Leather Bag')">Add to Cart</button>
 </div>
 
 
 <script>const stripe = Stripe('pk_live_51QVfT4CDK4fpOs814KMyC5AJHTRP74D5yHhEjZY2jf10XP0taGAh5WiRSHPr4hrnihp2MUCx3DGOXr2kGKHOFAb200y4c824Uy');
     const elements = stripe.elements();
-    const options = {
+    const options1 = {
       amount: 18000, // $180.00 USD
       currency: 'USD',
       // the country that the end-buyer is in
       countryCode: 'US',
+    paymentMethodTypes: ['klarna'],
+
     };
-    const PaymentMessageElement =
-      elements.create('paymentMethodMessaging', options);
-    PaymentMessageElement.mount('#payment-method-messaging-element');</script>
+    const options2= {
+         amount: 18000, // $180.00 USD
+      currency: 'USD',
+      // the country that the end-buyer is in
+      countryCode: 'US',
+    paymentMethodTypes: ['affirm'],
+
+    }
+    
+    const PaymentMessageElement1 =
+      elements.create('paymentMethodMessaging', options1);
+    PaymentMessageElement1.mount('#payment-method-messaging-element1')
+    const PaymentMessageElement2 =
+      elements.create('paymentMethodMessaging', options2);
+    PaymentMessageElement2.mount('#payment-method-messaging-element2')
+    ;
+    </script>
+    
